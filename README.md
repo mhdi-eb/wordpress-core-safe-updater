@@ -23,17 +23,17 @@ A safe Bash script for updating WordPress core files without WP-CLI, PHP executi
 Check the script syntax:
 
 ```bash
-bash -n wp-up.sh
+bash -n wp-updater.sh
 ```
 
 Run the updater as root:
 ```
-bash wp-up.sh /path/to/wordpress
+bash wp-updater.sh /path/to/wordpress
 ```
 
 Example:
 ```
-bash wp-up.sh /home/example/public_html/
+bash wp-updater.sh /home/example/public_html/
 ```
 ## Preserved Items
 
