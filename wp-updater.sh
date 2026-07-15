@@ -15,7 +15,7 @@ umask 022
 # - Never changes ownership of the WordPress root directory itself
 #
 # Usage:
-#   bash wp-up.sh /path/to/wordpress
+#   bash wp-updater.sh /path/to/wordpress
 # ============================================================
 
 if [[ $EUID -ne 0 ]]; then
@@ -486,4 +486,4 @@ echo "[+] robots.txt:       preserved; owner unchanged"
 echo "[+] Custom files:     preserved; owner unchanged"
 echo "[+] xmlrpc.php:       replaced with the new official file"
 echo "[+] New core owner:   $OWNER_NAME"
-echo "[+] Root owner:       $ROOT_OWNER_AFTER"
+echo "[+] WordPress root owner remained unchanged."
