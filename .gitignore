@@ -1,0 +1,11 @@
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+.idea/
+.vscode/
+
+.wp-core-stage.*
+.wp-core-rollback.*
+.wp-core-update.lock
