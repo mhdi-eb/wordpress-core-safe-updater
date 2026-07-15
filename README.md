@@ -1,3 +1,5 @@
+![Bash checks](https://github.com/mhdi-eb/wordpress-core-safe-updater/actions/workflows/shellcheck.yml/badge.svg)
+
 # WordPress Core Safe Updater
 
 A safe Bash script for updating WordPress core files without WP-CLI, PHP execution, or automatic database upgrades.
@@ -39,11 +41,12 @@ bash wp-updater.sh /home/example/public_html/
 
 The script does not modify:
 
-wp-content/
-wp-config.php
-.htaccess
-robots.txt
-Custom files outside the official WordPress package
+- `wp-content/`
+- `wp-config.php`
+- `.htaccess`
+- `robots.txt`
+- Custom files outside the official WordPress package
+
 ## Important
 
 The database is not upgraded automatically. Always maintain a separate backup policy for production websites
