@@ -131,7 +131,7 @@ rollback() {
     if [[ -n "$INSTALLED_NEW_ROOT_LIST" && -f "$INSTALLED_NEW_ROOT_LIST" ]]; then
         while IFS= read -r file; do
             [[ -n "$file" ]] || continue
-            rm -rf -- "$WP_PATH/$file"
+            rm -rf -- "${WP_PATH:?}/${file:?}"
         done < "$INSTALLED_NEW_ROOT_LIST"
     fi
 
@@ -157,7 +157,7 @@ rollback() {
         while IFS= read -r file; do
             [[ -n "$file" ]] || continue
             if [[ -e "$BACKUP_DIR/$file" || -L "$BACKUP_DIR/$file" ]]; then
-                rm -rf -- "$WP_PATH/$file"
+                rm -rf -- "${WP_PATH:?}/${file:?}"
                 mv -- "$BACKUP_DIR/$file" "$WP_PATH/$file"
             fi
         done < "$MOVED_OLD_ROOT_LIST"
@@ -348,7 +348,10 @@ if [[ -e "$MAINTENANCE_FILE" || -L "$MAINTENANCE_FILE" ]]; then
     exit 1
 fi
 
-printf '<?php $upgrading = %s; ?>\n' "$(date +%s)" > "$MAINTENANCE_FILE"
+printf '%s\n' \
+    "<?php \$upgrading = $(date +%s); ?>" \
+    > "$MAINTENANCE_FILE"
+    
 chmod 0644 "$MAINTENANCE_FILE"
 MAINTENANCE_CREATED=1
 UPDATE_STARTED=1
