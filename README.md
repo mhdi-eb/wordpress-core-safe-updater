@@ -24,15 +24,18 @@ Check the script syntax:
 
 ```bash
 bash -n wp-up.sh
+```
 
 Run the updater as root:
-
+```
 bash wp-up.sh /path/to/wordpress
+```
 
 Example:
-
+```
 bash wp-up.sh /home/example/public_html/
-Preserved Items
+```
+## Preserved Items
 
 The script does not modify:
 
@@ -41,6 +44,6 @@ wp-config.php
 .htaccess
 robots.txt
 Custom files outside the official WordPress package
-Important
+## Important
 
 The database is not upgraded automatically. Always maintain a separate backup policy for production websites
