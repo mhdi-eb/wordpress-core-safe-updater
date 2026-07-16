@@ -50,3 +50,14 @@ The script does not modify:
 ## Important
 
 The database is not upgraded automatically. Always maintain a separate backup policy for production websites
+
+## Known Limitations
+
+- Intended for single-site WordPress installations
+- Does not upgrade the WordPress database
+- Does not update plugins or themes
+- Always downloads the latest stable WordPress release
+- Requires root privileges
+- Requires GNU/Linux command-line utilities
+- Rollback cannot run after `kill -9`, server power loss, kernel panic, or filesystem failure
+- Plugin and theme compatibility is not tested
